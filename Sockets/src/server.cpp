@@ -111,6 +111,10 @@ int __cdecl main(void)
 
     }
     
+    // shutdown the connection since we're done
+    iResult = shutdown(ClientSocket, SD_SEND);
+
+    // cleanup
     closesocket(ClientSocket);
     WSACleanup();
 
